@@ -33,7 +33,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post('http://localhost:8080/api/user/register', user)
+      const res = await axios.post('https://dactor-appointment.onrender.com/api/user/register', user)
       if (res.data.success) {
         message.success('Registered Successfully')
         navigate('/login')
@@ -88,13 +88,13 @@ const Register = () => {
                   <Form onSubmit={handleSubmit} >
                     <label class="my-1 form-label" for="formControlLg">Full name</label>
                     <MDBInput style={{ height: '40px' }} name='fullName' value={user.fullName} onChange={handleChange} id='formControlLg' type='text' size="sm" />
-                    
+
                     <label class="my-1 form-label" for="formControlLg">Email</label>
                     <MDBInput style={{ height: '40px' }} name='email' value={user.email} onChange={handleChange} id='formControlLg' type='email' size="sm" />
-                    
+
                     <label class="my-1 form-label" for="formControlLg">Password</label>
                     <MDBInput style={{ height: '40px' }} name='password' value={user.password} onChange={handleChange} id='formControlLg' type='password' size="sm" />
-                    
+
                     <label class="my-1 form-label" for="formControlLg">Phone</label>
                     <MDBInput style={{ height: '40px' }} name='phone' value={user.phone} onChange={handleChange} id='formControlLg' type='phone' size="sm" />
 
@@ -119,7 +119,7 @@ const Register = () => {
                       />
                     </Container>
 
-                    <Button style={{marginTop: '20px'}} className="mb-4 bg-dark" variant='dark' size='lg' type="submit">Register</Button>
+                    <Button style={{ marginTop: '20px' }} className="mb-4 bg-dark" variant='dark' size='lg' type="submit">Register</Button>
                   </Form>
                   <p className="mb-5 pb-md-2" style={{ color: '#393f81' }}>Have an account? <Link to={'/login'} style={{ color: '#393f81' }}>Login here</Link></p>
 

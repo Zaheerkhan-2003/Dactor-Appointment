@@ -41,13 +41,13 @@ const DoctorList = ({ userDoctorId, doctor, userdata }) => {
          formData.append('userInfo', JSON.stringify(userdata));
          formData.append('doctorInfo', JSON.stringify(doctor));
 
-         const res = await axios.post('http://localhost:8080/api/user/getappointment', formData, {
+         const res = await axios.post('https://dactor-appointment.onrender.com/api/user/getappointment', formData, {
             headers: {
                Authorization: `Bearer ${localStorage.getItem("token")}`,
                'Content-Type': 'multipart/form-data',
             },
          });
-         
+
          if (res.data.success) {
             message.success(res.data.message)
          }

@@ -18,7 +18,7 @@ const AdminHome = () => {
 
    const getUserData = async () => {
       try {
-         await axios.post('http://localhost:8080/api/user/getuserdata', {}, {
+         await axios.post('https://dactor-appointment.onrender.com/api/user/getuserdata', {}, {
             headers: {
                Authorization: "Bearer " + localStorage.getItem('token')
             },

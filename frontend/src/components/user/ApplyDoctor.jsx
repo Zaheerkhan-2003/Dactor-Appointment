@@ -23,9 +23,9 @@ function ApplyDoctor({ userId }) {
       setDoctor({ ...doctor, [e.target.name]: e.target.value })
    }
    const handleSubmit = async () => {
-      
+
       try {
-         const res = await axios.post('http://localhost:8080/api/user/registerdoc', { doctor, userId: userId }, {
+         const res = await axios.post('https://dactor-appointment.onrender.com/api/user/registerdoc', { doctor, userId: userId }, {
             headers: {
                Authorization: `Bearer ${localStorage.getItem('token')}`
             }

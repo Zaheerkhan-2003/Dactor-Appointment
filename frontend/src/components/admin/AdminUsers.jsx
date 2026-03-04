@@ -8,14 +8,14 @@ const AdminUsers = () => {
 
    const [users, setUsers] = useState([])
 
-   const getUsers = async()=>{
+   const getUsers = async () => {
       try {
-         const res = await axios.get('http://localhost:8080/api/admin/getallusers', {
+         const res = await axios.get('https://dactor-appointment.onrender.com/api/admin/getallusers', {
             headers: {
-               Authorization : `Bearer ${localStorage.getItem("token")}`,
+               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
          })
-         if(res.data.success){
+         if (res.data.success) {
             setUsers(res.data.data)
             console.log(users)
          }
@@ -24,16 +24,16 @@ const AdminUsers = () => {
       }
    }
 
-   useEffect(()=>{
+   useEffect(() => {
       getUsers()
 
-   },[])
+   }, [])
 
 
    return (
       <div>
          <h4 className='p-3 text-center'>All Users</h4>
-         
+
          <Container>
             <Table className='my-3' striped bordered hover>
                <thead>
@@ -56,7 +56,7 @@ const AdminUsers = () => {
                               <td>{user.phone}</td>
                               <td>{user.type}</td>
                               <td>{user.isdoctor === true ? 'Yes' : 'No'}</td>
-                              
+
                            </tr>
                         )
                      })

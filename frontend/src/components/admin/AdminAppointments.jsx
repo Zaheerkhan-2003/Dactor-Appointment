@@ -10,7 +10,7 @@ const AdminAppointments = () => {
 
    const getAppointments = async () => {
       try {
-         const res = await axios.get('http://localhost:8080/api/admin/getallAppointmentsAdmin', {
+         const res = await axios.get('https://dactor-appointment.onrender.com/api/admin/getallAppointmentsAdmin', {
             headers: {
                Authorization: `Bearer ${localStorage.getItem('token')}`
             },
@@ -51,7 +51,7 @@ const AdminAppointments = () => {
                               <td>{appointment.userInfo.fullName}</td>
                               <td>{appointment.doctorInfo.fullName}</td>
                               <td>{appointment.date}</td>
-                              <td>{appointment.status}</td> 
+                              <td>{appointment.status}</td>
                            </tr>
                         )
                      })

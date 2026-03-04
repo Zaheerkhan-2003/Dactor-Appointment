@@ -31,14 +31,14 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/api/user/login", user);
+      const res = await axios.post("https://dactor-appointment.onrender.com/api/user/login", user);
       if (res.data.success) {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('userData', JSON.stringify(res.data.userData));
         message.success('Login successfully');
         const isLoggedIn = JSON.parse(localStorage.getItem("userData"));
         const { type } = isLoggedIn
-        
+
         switch (type) {
           case "admin":
             navigate("/adminHome")
@@ -52,7 +52,7 @@ const Login = () => {
             break;
         }
       }
-      else{
+      else {
         message.error(res.data.message)
       }
     } catch (error) {
@@ -106,7 +106,7 @@ const Login = () => {
                 </div>
 
                 <Form onSubmit={handleSubmit}>
-                <label class="form-label" for="formControlLgEmail">Email</label>
+                  <label class="form-label" for="formControlLgEmail">Email</label>
                   <MDBInput
                     style={{ margin: '5px auto' }}
                     name="email"

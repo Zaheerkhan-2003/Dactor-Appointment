@@ -16,7 +16,7 @@ const Notification = () => {
 
    const handleAllMarkRead = async () => {
       try {
-         const res = await axios.post('http://localhost:8080/api/user/getallnotification', { userId: user._id }, {
+         const res = await axios.post('https://dactor-appointment.onrender.com/api/user/getallnotification', { userId: user._id }, {
             headers: {
                Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
@@ -24,7 +24,7 @@ const Notification = () => {
          if (res.data.success) {
             const updatedUser = { ...user, notification: [], seennotification: [...user.seennotification, ...user.notification] };
             localStorage.setItem('userData', JSON.stringify(updatedUser));
-            
+
             message.success(res.data.message)
             setUser({ ...user, notification: [] })
          }
@@ -38,7 +38,7 @@ const Notification = () => {
    }
    const handledeleteAllMark = async () => {
       try {
-         const res = await axios.post('http://localhost:8080/api/user/deleteallnotification', { userId: user._id }, {
+         const res = await axios.post('https://dactor-appointment.onrender.com/api/user/deleteallnotification', { userId: user._id }, {
             headers: {
                Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
@@ -67,7 +67,7 @@ const Notification = () => {
          <Tabs>
             <Tabs.TabPane tab="unRead" key={0}>
                <div className="d-flex justify-content-end">
-                  <h4 style={{ cursor: 'pointer',  }} onClick={handleAllMarkRead} className="p-2">Mark all read</h4>
+                  <h4 style={{ cursor: 'pointer', }} onClick={handleAllMarkRead} className="p-2">Mark all read</h4>
                </div>
                {user?.notification.map((notificationMsg) => (
                   <div onClick={notificationMsg.onClickPath} className="card">

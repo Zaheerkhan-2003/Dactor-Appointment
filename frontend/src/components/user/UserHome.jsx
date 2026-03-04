@@ -27,7 +27,7 @@ const UserHome = () => {
 
    const getUserData = async () => {
       try {
-         await axios.post('http://localhost:8080/api/user/getuserdata', {}, {
+         await axios.post('https://dactor-appointment.onrender.com/api/user/getuserdata', {}, {
             headers: {
                Authorization: "Bearer " + localStorage.getItem('token')
             },
@@ -39,7 +39,7 @@ const UserHome = () => {
 
    const getDoctorData = async () => {
       try {
-         const res = await axios.get('http://localhost:8080/api/user/getalldoctorsu', {
+         const res = await axios.get('https://dactor-appointment.onrender.com/api/user/getalldoctorsu', {
             headers: {
                Authorization: "Bearer " + localStorage.getItem('token')
             },
