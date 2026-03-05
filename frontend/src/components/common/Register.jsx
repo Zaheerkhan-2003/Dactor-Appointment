@@ -78,7 +78,7 @@ const Register = () => {
         <MDBCard style={{ border: 'none' }}>
           <MDBRow style={{ background: 'rgb(190, 203, 203)' }} className='g-0 border-none p-3'>
 
-            <MDBCol md='6'>
+            <MDBCol md='6' xs='12'>
               <MDBCardBody className='d-flex mx-3 flex-column'>
 
                 <div className='d-flex flex-row mb-2'>
@@ -128,7 +128,7 @@ const Register = () => {
               </MDBCardBody>
             </MDBCol>
 
-            <MDBCol md='6'>
+            <MDBCol md='6' xs='12'>
               <MDBCardImage style={{ mixBlendMode: 'darken' }} src={p2} alt="login form" className='rounded-start w-100' />
             </MDBCol>
 

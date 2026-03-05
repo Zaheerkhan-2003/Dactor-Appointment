@@ -94,11 +94,11 @@ const Login = () => {
         <MDBCard style={{ border: 'none' }}>
           <MDBRow style={{ background: 'rgb(190, 203, 203)' }} className='g-0 border-none p-3'>
 
-            <MDBCol md='6'>
+            <MDBCol md='6' xs='12'>
               <MDBCardImage src={photo1} alt="login form" className='rounded-start w-100' />
             </MDBCol>
 
-            <MDBCol md='6'>
+            <MDBCol md='6' xs='12'>
               <MDBCardBody className='d-flex mx-5 flex-column'>
 
                 <div className='d-flex flex-row mt-2 mb-5'>

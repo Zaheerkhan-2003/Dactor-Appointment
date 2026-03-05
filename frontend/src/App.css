@@ -30,17 +30,30 @@ a {
   max-width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .home-container {
+    flex-direction: row;
+  }
 }
 
 .left-side,
 .right-side {
   flex: 1;
-  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
+@media (min-width: 768px) {
+  .left-side,
+  .right-side {
+    height: 100%;
+  }
 }
 
 .left-side img {
@@ -60,15 +73,29 @@ span {
 }
 
 .f-letter {
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .s-letter {
-  font-size: 2.2em;
+  font-size: 1.5em;
 }
 
 .t-letter {
-  font-size: 1.5em;
+  font-size: 1.2em;
+}
+
+@media (min-width: 768px) {
+  .f-letter {
+    font-size: 3em;
+  }
+
+  .s-letter {
+    font-size: 2.2em;
+  }
+
+  .t-letter {
+    font-size: 1.5em;
+  }
 }
 
 /************************************************************/
@@ -80,17 +107,33 @@ span {
 
 .layout {
   display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    flex-direction: row;
+  }
 }
 
 .sidebar {
-  min-height: 100%;
-  height: 88vh;
-  width: 17vw;
+  width: 100%;
+  min-height: auto;
   border-radius: 5px;
   background-color: rgb(153, 145, 145);
   box-shadow: 0 0 2px grey;
-  margin-right: 20px;
   color: white;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    min-height: 100%;
+    height: 88vh;
+    width: 17vw;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
 }
 
 .content {
@@ -120,27 +163,52 @@ span {
 }
 
 .menu {
-  margin-top: 100px;
+  margin-top: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 
 .menu-items {
-  margin-top: 20px;
+  margin: 10px;
+}
+
+@media (min-width: 768px) {
+  .menu {
+    margin-top: 100px;
+    flex-direction: column;
+  }
+  .menu-items {
+    margin-top: 20px;
+  }
 }
 
 .menu-items p {
   text-align: center;
   color: white;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
+@media (min-width: 768px) {
+  .menu-items p {
+    font-size: 1.3rem;
+  }
+}
+
 .menu-items .icons {
-  font-size: 1.2rem;
-  margin: 0 15px;
+  font-size: 1rem;
+  margin: 0 5px;
+}
+
+@media (min-width: 768px) {
+  .menu-items .icons {
+    font-size: 1.2rem;
+    margin: 0 15px;
+  }
 }
 
 .header-content {
